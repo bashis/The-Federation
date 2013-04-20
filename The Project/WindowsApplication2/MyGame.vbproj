@@ -1,0 +1,970 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{11D90BD0-3DE0-40F2-A11D-9F002E7B44F1}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>RosterViewer.My.MyApplication</StartupObject>
+    <RootNamespace>RosterViewer</RootNamespace>
+    <AssemblyName>WWE Roster Viewer</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>WWE Roster Viewer.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>WWE Roster Viewer.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Xna.Framework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Messaging" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="Basic\Country.vb" />
+    <Compile Include="Basic\CountrySetter.Designer.vb">
+      <DependentUpon>CountrySetter.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Basic\CountrySetter.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Basic\GimmickSuggestion.vb" />
+    <Compile Include="Basic\GimmickSuggestionForm.Designer.vb">
+      <DependentUpon>GimmickSuggestionForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Basic\GimmickSuggestionForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Basic\SetFinishersForm.Designer.vb">
+      <DependentUpon>SetFinishersForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Basic\SetFinishersForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Basic\StoredGimmickControl.Designer.vb">
+      <DependentUpon>StoredGimmickControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Basic\StoredGimmickControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Basic\StoredGimmicksForm.Designer.vb">
+      <DependentUpon>StoredGimmicksForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Basic\StoredGimmicksForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Basic\WAppearance.vb" />
+    <Compile Include="Basic\XMLColor.vb" />
+    <Compile Include="Day\Match\MatchGen\BasicStats.vb" />
+    <Compile Include="Basic\Currency.vb" />
+    <Compile Include="Day\Book PPV\BookPPVForm.Designer.vb">
+      <DependentUpon>BookPPVForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Day\Book PPV\BookPPVForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Day\Book PPV\EditPPVCardForm.Designer.vb">
+      <DependentUpon>EditPPVCardForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Day\Book PPV\EditPPVCardForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Day\Book PPV\SelectPPVEvent.Designer.vb">
+      <DependentUpon>SelectPPVEvent.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Day\Book PPV\SelectPPVEvent.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Day\Match\MatchGen\MovesetHelper.Designer.vb">
+      <DependentUpon>MovesetHelper.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Day\Match\MatchGen\MovesetHelper.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Day\Match\PreviewScreen.Designer.vb">
+      <DependentUpon>PreviewScreen.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Day\Match\PreviewScreen.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Day\Match\Special\RoyalRumble\RoyalRumbleForm.Designer.vb">
+      <DependentUpon>RoyalRumbleForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Day\Match\Special\RoyalRumble\RoyalRumbleForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Day\Match\Special\RoyalRumble\RoyalRumbleWInfoForm.Designer.vb">
+      <DependentUpon>RoyalRumbleWInfoForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Day\Match\Special\RoyalRumble\RoyalRumbleWInfoForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Day\NewsScreen.Designer.vb">
+      <DependentUpon>NewsScreen.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Day\NewsScreen.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Day\PPVBookedMatchControl.Designer.vb">
+      <DependentUpon>PPVBookedMatchControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Day\PPVBookedMatchControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Day\Promos\PromoEditor.Designer.vb">
+      <DependentUpon>PromoEditor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Day\Promos\PromoEditor.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Day\Promos\StartPromo.Designer.vb">
+      <DependentUpon>StartPromo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Day\Promos\StartPromo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Feud\CreateFeud.Designer.vb">
+      <DependentUpon>CreateFeud.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Feud\CreateFeud.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Feud\Feud.vb" />
+    <Compile Include="Basic\Gimmick.vb" />
+    <Compile Include="Basic\Promotion.vb" />
+    <Compile Include="Basic\Title.vb" />
+    <Compile Include="Basic\WGuest.vb" />
+    <Compile Include="Basic\WrestlerSelectionDialog.Designer.vb">
+      <DependentUpon>WrestlerSelectionDialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Basic\WrestlerSelectionDialog.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Basic\WSelect.Designer.vb">
+      <DependentUpon>WSelect.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Basic\WSelect.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Day\AddPPV.Designer.vb">
+      <DependentUpon>AddPPV.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Day\AddPPV.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Day\DayForm.Designer.vb">
+      <DependentUpon>DayForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Day\DayForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Day\News\FullNews.Designer.vb">
+      <DependentUpon>FullNews.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Day\News\FullNews.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Day\News\NewsBase.Designer.vb">
+      <DependentUpon>NewsBase.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Day\News\NewsBase.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Day\News\NewsItem.Designer.vb">
+      <DependentUpon>NewsItem.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Day\News\NewsItem.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Day\Twitter\TwitMsg.Designer.vb">
+      <DependentUpon>TwitMsg.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Day\Twitter\TwitMsg.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Day\Twitter\TwitsTemplates.vb" />
+    <Compile Include="Day\Twitter\Twitter.Designer.vb">
+      <DependentUpon>Twitter.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Day\Twitter\Twitter.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Feud\FeudViewer.Designer.vb">
+      <DependentUpon>FeudViewer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Feud\FeudViewer.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Feud\Pre-made_Storylines.vb" />
+    <Compile Include="Feud\SelectStoryline.Designer.vb">
+      <DependentUpon>SelectStoryline.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Feud\SelectStoryline.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Feud\Storyline.vb" />
+    <Compile Include="Feud\StorylinePic.Designer.vb">
+      <DependentUpon>StorylinePic.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Feud\StorylinePic.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Feud\WatchAllFeuds.Designer.vb">
+      <DependentUpon>WatchAllFeuds.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Feud\WatchAllFeuds.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Finanace\Finance.vb" />
+    <Compile Include="Finanace\FinanceForm.Designer.vb">
+      <DependentUpon>FinanceForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Finanace\FinanceForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Game\LoadingForm.Designer.vb">
+      <DependentUpon>LoadingForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Game\LoadingForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Game\MainMenu.Designer.vb">
+      <DependentUpon>MainMenu.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Game\MainMenu.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Day\Match\MatchGen\Health.vb" />
+    <Compile Include="Day\Match\MatchGen\Interference.vb" />
+    <Compile Include="Day\Match\MatchGen\TMove.vb" />
+    <Compile Include="Day\Match\MatchGen\MoveEditForm.Designer.vb">
+      <DependentUpon>MoveEditForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Day\Match\MatchGen\MoveEditForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Day\Match\MatchGen\MovesEditor.Designer.vb">
+      <DependentUpon>MovesEditor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Day\Match\MatchGen\MovesEditor.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Day\Match\MatchGen\MyWrestler.vb" />
+    <Compile Include="Day\Match\MatchGen\NewMatchGenerator.Designer.vb">
+      <DependentUpon>NewMatchGenerator.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Day\Match\MatchGen\NewMatchGenerator.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Day\Match\MatchGen\NewMoveBox.Designer.vb">
+      <DependentUpon>NewMoveBox.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Day\Match\MatchGen\NewMoveBox.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ImageButton.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MovesDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MovesDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MovesDataSet.vb">
+      <DependentUpon>MovesDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Other\BranchAddDialog.Designer.vb">
+      <DependentUpon>BranchAddDialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Other\BranchAddDialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Day\Calendar.designer.vb">
+      <DependentUpon>Calendar.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Day\Calendar.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Day\Schedule.designer.vb">
+      <DependentUpon>Schedule.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Day\Schedule.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Day\Match.vb" />
+    <Compile Include="Day\Promos\Promo.vb" />
+    <Compile Include="Day\Show.vb" />
+    <Compile Include="Day\ShowViewer.Designer.vb">
+      <DependentUpon>ShowViewer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Day\ShowViewer.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Other\MTCForm.Designer.vb">
+      <DependentUpon>MTCForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Other\MTCForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Other\wPushComparer.vb" />
+    <Compile Include="Personnel\PersonnelForm.Designer.vb">
+      <DependentUpon>PersonnelForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Personnel\PersonnelForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RosterViewer\About Wrestler\Ability_control.Designer.vb">
+      <DependentUpon>Ability_control.vb</DependentUpon>
+    </Compile>
+    <Compile Include="RosterViewer\About Wrestler\Ability_control.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Other\About_Title.Designer.vb">
+      <DependentUpon>About_Title.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Other\About_Title.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RosterViewer\About Wrestler\About_Wrestler.Designer.vb">
+      <DependentUpon>About_Wrestler.vb</DependentUpon>
+    </Compile>
+    <Compile Include="RosterViewer\About Wrestler\About_Wrestler.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Basic\ApplicationEvents.vb" />
+    <Compile Include="Basic\Basic.vb" />
+    <Compile Include="RosterViewer\About Wrestler\NewGimmickForm.Designer.vb">
+      <DependentUpon>NewGimmickForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="RosterViewer\About Wrestler\NewGimmickForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RosterViewer\About Wrestler\NewGimmickSelector.Designer.vb">
+      <DependentUpon>NewGimmickSelector.vb</DependentUpon>
+    </Compile>
+    <Compile Include="RosterViewer\About Wrestler\NewGimmickSelector.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RosterViewer\About Wrestler\SelectionDialog2.Designer.vb">
+      <DependentUpon>SelectionDialog2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="RosterViewer\About Wrestler\SelectionDialog2.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RosterViewer\About Wrestler\Valuer.Designer.vb">
+      <DependentUpon>Valuer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="RosterViewer\About Wrestler\Valuer.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RosterViewer\About Wrestler\WPFValuer.xaml.vb">
+      <DependentUpon>WPFValuer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Day\DayWatcher.Designer.vb">
+      <DependentUpon>DayWatcher.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Day\DayWatcher.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RosterViewer\ChangeFinisherForm.Designer.vb">
+      <DependentUpon>ChangeFinisherForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="RosterViewer\ChangeFinisherForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RosterViewer\DBEdit.Designer.vb">
+      <DependentUpon>DBEdit.vb</DependentUpon>
+    </Compile>
+    <Compile Include="RosterViewer\DBEdit.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Basic\DefaultConstants.vb" />
+    <Compile Include="RosterViewer\RosterViewerForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RosterViewer\RosterViewerForm.Designer.vb">
+      <DependentUpon>RosterViewerForm.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Day\Match\Items.vb" />
+    <Compile Include="Day\Match\ItemsConstants.vb" />
+    <Compile Include="Day\Match\MatchMenu.Designer.vb">
+      <DependentUpon>MatchMenu.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Day\Match\MatchMenu.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Day\Match\MatchSetup.Designer.vb">
+      <DependentUpon>MatchSetup.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Day\Match\MatchSetup.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Day\Match\MatchStars.Designer.vb">
+      <DependentUpon>MatchStars.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Day\Match\MatchStars.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Day\Match\MatchType.vb" />
+    <Compile Include="Day\Match\Ring.vb" />
+    <Compile Include="Day\Match\TypeTemplate.vb" />
+    <Compile Include="Basic\MData.Designer.vb">
+      <DependentUpon>MData.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Basic\MData.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Basic\Perk.vb" />
+    <Compile Include="RosterViewer\About Wrestler\PushControl.Designer.vb">
+      <DependentUpon>PushControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="RosterViewer\About Wrestler\PushControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RosterViewer\About Wrestler\Statviewer.Designer.vb">
+      <DependentUpon>Statviewer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="RosterViewer\About Wrestler\Statviewer.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RosterViewer\About Wrestler\VSB.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Basic\WModel.vb" />
+    <Compile Include="Basic\WStats.vb" />
+    <Compile Include="Basic\WStyles.vb" />
+    <Compile Include="Day\Match\PView.xaml.vb">
+      <DependentUpon>PView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Day\Promos\PromoForm.Designer.vb">
+      <DependentUpon>PromoForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Day\Promos\PromoForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Other\WPFButton.xaml.vb">
+      <DependentUpon>WPFButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Day\Match\MatchGen\TitleSetup.Designer.vb">
+      <DependentUpon>TitleSetup.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Day\Match\MatchGen\TitleSetup.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RosterViewer\TrainingForm.Designer.vb">
+      <DependentUpon>TrainingForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="RosterViewer\TrainingForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RosterViewer\TrainingOption.Designer.vb">
+      <DependentUpon>TrainingOption.vb</DependentUpon>
+    </Compile>
+    <Compile Include="RosterViewer\TrainingOption.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RosterViewer\WrestlerGenerator.designer.vb">
+      <DependentUpon>WrestlerGenerator.vb</DependentUpon>
+    </Compile>
+    <Compile Include="RosterViewer\WrestlerGenerator.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Day\Match\MatchGen\TSControl.Designer.vb">
+      <DependentUpon>TSControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Day\Match\MatchGen\TSControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Day\Match\MatchGen\Weapon.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Basic\CountrySetter.resx">
+      <DependentUpon>CountrySetter.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Basic\GimmickSuggestionForm.resx">
+      <DependentUpon>GimmickSuggestionForm.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Basic\SetFinishersForm.resx">
+      <DependentUpon>SetFinishersForm.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Basic\StoredGimmickControl.resx">
+      <DependentUpon>StoredGimmickControl.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Basic\StoredGimmicksForm.resx">
+      <DependentUpon>StoredGimmicksForm.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Basic\WrestlerSelectionDialog.resx">
+      <DependentUpon>WrestlerSelectionDialog.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Basic\WSelect.resx">
+      <DependentUpon>WSelect.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Day\AddPPV.resx">
+      <DependentUpon>AddPPV.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Day\Book PPV\BookPPVForm.resx">
+      <DependentUpon>BookPPVForm.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Day\Book PPV\EditPPVCardForm.resx">
+      <DependentUpon>EditPPVCardForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Day\Book PPV\SelectPPVEvent.resx">
+      <DependentUpon>SelectPPVEvent.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Day\DayForm.resx">
+      <DependentUpon>DayForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Day\Match\MatchGen\MovesetHelper.resx">
+      <DependentUpon>MovesetHelper.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Day\Match\PreviewScreen.resx">
+      <DependentUpon>PreviewScreen.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Day\Match\Special\RoyalRumble\RoyalRumbleForm.resx">
+      <DependentUpon>RoyalRumbleForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Day\Match\Special\RoyalRumble\RoyalRumbleWInfoForm.resx">
+      <DependentUpon>RoyalRumbleWInfoForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Day\NewsScreen.resx">
+      <DependentUpon>NewsScreen.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Day\News\FullNews.resx">
+      <DependentUpon>FullNews.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Day\News\NewsBase.resx">
+      <DependentUpon>NewsBase.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Day\News\NewsItem.resx">
+      <DependentUpon>NewsItem.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Day\PPVBookedMatchControl.resx">
+      <DependentUpon>PPVBookedMatchControl.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Day\Promos\PromoEditor.resx">
+      <DependentUpon>PromoEditor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Day\Promos\StartPromo.resx">
+      <DependentUpon>StartPromo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Day\Twitter\TwitMsg.resx">
+      <DependentUpon>TwitMsg.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Day\Twitter\Twitter.resx">
+      <DependentUpon>Twitter.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Feud\CreateFeud.resx">
+      <DependentUpon>CreateFeud.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Feud\FeudViewer.resx">
+      <DependentUpon>FeudViewer.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Feud\SelectStoryline.resx">
+      <DependentUpon>SelectStoryline.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Feud\StorylinePic.resx">
+      <DependentUpon>StorylinePic.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Feud\WatchAllFeuds.resx">
+      <DependentUpon>WatchAllFeuds.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Finanace\FinanceForm.resx">
+      <DependentUpon>FinanceForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Game\LoadingForm.resx">
+      <DependentUpon>LoadingForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Game\MainMenu.resx">
+      <DependentUpon>MainMenu.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Day\Match\MatchGen\MoveEditForm.resx">
+      <DependentUpon>MoveEditForm.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Day\Match\MatchGen\MovesEditor.resx">
+      <DependentUpon>MovesEditor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Day\Match\MatchGen\NewMatchGenerator.resx">
+      <DependentUpon>NewMatchGenerator.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Day\Match\MatchGen\NewMoveBox.resx">
+      <DependentUpon>NewMoveBox.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Other\BranchAddDialog.resx">
+      <DependentUpon>BranchAddDialog.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Day\Calendar.resx">
+      <DependentUpon>Calendar.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Day\Schedule.resx">
+      <DependentUpon>Schedule.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Day\ShowViewer.resx">
+      <DependentUpon>ShowViewer.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Other\MTCForm.resx">
+      <DependentUpon>MTCForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Personnel\PersonnelForm.resx">
+      <DependentUpon>PersonnelForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RosterViewer\About Wrestler\Ability_control.resx">
+      <DependentUpon>Ability_control.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Other\About_Title.resx">
+      <DependentUpon>About_Title.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RosterViewer\About Wrestler\About_Wrestler.resx">
+      <DependentUpon>About_Wrestler.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RosterViewer\About Wrestler\NewGimmickForm.resx">
+      <DependentUpon>NewGimmickForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RosterViewer\About Wrestler\NewGimmickSelector.resx">
+      <DependentUpon>NewGimmickSelector.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RosterViewer\About Wrestler\SelectionDialog2.resx">
+      <DependentUpon>SelectionDialog2.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RosterViewer\About Wrestler\Valuer.resx">
+      <DependentUpon>Valuer.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Day\DayWatcher.resx">
+      <DependentUpon>DayWatcher.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RosterViewer\ChangeFinisherForm.resx">
+      <DependentUpon>ChangeFinisherForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RosterViewer\DBEdit.resx">
+      <DependentUpon>DBEdit.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RosterViewer\RosterViewerForm.resx">
+      <DependentUpon>RosterViewerForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Day\Match\MatchMenu.resx">
+      <DependentUpon>MatchMenu.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Day\Match\MatchSetup.resx">
+      <DependentUpon>MatchSetup.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Day\Match\MatchStars.resx">
+      <DependentUpon>MatchStars.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Basic\MData.resx">
+      <DependentUpon>MData.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RosterViewer\About Wrestler\PushControl.resx">
+      <DependentUpon>PushControl.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RosterViewer\About Wrestler\Statviewer.resx">
+      <DependentUpon>Statviewer.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Day\Promos\PromoForm.resx">
+      <DependentUpon>PromoForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Day\Match\MatchGen\TitleSetup.resx">
+      <DependentUpon>TitleSetup.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RosterViewer\TrainingForm.resx">
+      <DependentUpon>TrainingForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RosterViewer\TrainingOption.resx">
+      <DependentUpon>TrainingOption.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RosterViewer\WrestlerGenerator.resx" />
+    <EmbeddedResource Include="Day\Match\MatchGen\TSControl.resx">
+      <DependentUpon>TSControl.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="MovesDataSet.xsc">
+      <DependentUpon>MovesDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="MovesDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MovesDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MovesDataSet.xss">
+      <DependentUpon>MovesDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="My Project\app.manifest" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\background2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\y_b536fffb.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mlogx.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\9999.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Mergerism\Mergerism\Mergerism.csproj">
+      <Project>{4EA54E2A-345C-4FAD-8389-B6FE17DE0659}</Project>
+      <Name>Mergerism</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Databases\Databases.csproj">
+      <Project>{3A30A3C9-606C-45DB-9EEF-FDB76924B9DC}</Project>
+      <Name>Databases</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Day\Match\PView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Other\WPFButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RosterViewer\About Wrestler\WPFValuer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bg-raw.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bg-sd.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\renamed\9999.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\sys\cntoff.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\sys\cnton.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\sys\mlogx.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bg-roh.jpg" />
+    <None Include="Resources\bg-free.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bg-tna.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\push2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\s1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bg.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bg-wwe.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wrestlemania 27 logo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wrestlemania-28-500.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wm28.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ExtremeRules09ons.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\extreme-rules1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Schedule\Empty.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Schedule\Others-PPV.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Schedule\ROH.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Schedule\TNA-IMPACT.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Schedule\WWE-NXT.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Schedule\WWE-PPV.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Schedule\WWE-RAW.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Schedule\WWE-SmackDown.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Schedule\WWE-Superstars.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Schedule\WWE-WrestleMania-28.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TNA_Background1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TNA_MAIN_Background.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Versus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bg1001.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\red_chenille_fabric_texture_by_beckas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bg-nxt.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bg-superstars.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\star.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\starbg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Release\renamed\9999.jpg" />
+    <Content Include="Moves.mdb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\bg_free.jpg" />
+    <None Include="Resources\bg_tna.jpg" />
+    <None Include="Resources\bg_superstars.jpg" />
+    <None Include="Resources\bg_sd.jpg" />
+    <None Include="Resources\bg_roh.jpg" />
+    <None Include="Resources\bg_raw.jpg" />
+    <None Include="Resources\bg_nxt.jpg" />
+    <None Include="Resources\closeTexture.png" />
+    <None Include="Resources\LoadScreen.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
